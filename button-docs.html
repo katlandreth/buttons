@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Foundation | Welcome</title>
+        <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/pagestyle.css" />
+        <link rel="stylesheet" href="css/buttons.css" />
+        <script src="js/vendor/modernizr.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/ascetic.min.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="js/jquery.nav.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    
+    <body>
+        <div class="content  large-8 columns">   
+<!-- Nav
+================================================== -->
+            <nav>
+            <h4>Table of Contents</h4>
+                <ul id="nav">
+                    
+                    <li class="current"><a href="#examples">Examples</a></li>
+                    <li><a href="#limitations">Limitations</a></li>
+                    <li><a href="#setup">Setting Up</a></li>
+                    <li><a href="#using">Using the Buttons</a></li>
+                    <ul>
+                        <li><a href="#default">Using the Default Button</a></li>
+                        <li><a href="#hover">Using Hover Effects</a></li>
+                        <li><a href="#modifyers">Using Modifyers</a></li>
+                        <li><a href="#disabled">The Disabled State</a></li>
+                    </ul>
+                    <li><a href="#altering">Altering the Buttons</a></li>
+                    <ul>
+                        <li><a href="#cssbasics">CSS Basics</a></li>
+                        <li><a href="#sassbasics">Modifying the CSS using SASS</a></li>
+                        <li><a href="#colorpalettes">Finding and Creating Color Palettes</a></li>
+                        <li><a href="#fonts">Using Google Fonts</a></li>
+                    </ul>
+                </ul>
+            </nav>
+                   
+<!-- Header
+================================================== -->
+
+        <div class="row">
+            <div class="large-12 columns">
+                <header>
+                    <h1>Flat Button Style and Use Guide</h1>
+                </header>
+             </div>
+        </div>
+
+<!-- Content
+================================================== -->
+<div class="row">
+            <div class="large-12 columns">
+                
+             <h2 id="examples">Examples</h2>
+            <p>Before we jump into using the buttons, here are a few examples of the effects you can get using the built-in CSS. It's easy to change the direction of the hover effect, and change the color and size of the buttons.</p>
+
+            <div class="row">
+                <div class="large-4 columns">
+                    <h5>Big Warning Button</h5>
+                    <button class="flat-button fb-top fb-warning fb-big" data-text="Trash">Trash</button>
+                    <button class="flat-button fb-bottom fb-warning fb-big" data-text="Delete">Delete</button>
+                    <button class="flat-button fb-left fb-warning fb-big" data-text="Buy Now">Buy Now</button>
+                    <button class="flat-button fb-right fb-warning fb-big icon" data-text="I">I</button>
+                </div>
+                <div class="large-4 columns">
+                   <h5>Medium Info Button</h5>
+                    <button class="flat-button fb-top fb-info fb-alt-hover " data-text="Save">Save</button>
+                    <button class="flat-button fb-bottom fb-info fb-alt-hover " data-text="Continue">Continue</button>
+                    <button class="flat-button fb-left fb-info fb-alt-hover " data-text="Buy Now">Buy Now</button>
+                    <button class="flat-button fb-right fb-info fb-alt-hover  icon" data-text="t">t</button>
+                </div>
+                <div class="large-4 columns">
+                   <h5>Small Note Button</h5>
+                    <button class="flat-button fb-top fb-note fb-alt-hover fb-small" data-text="Save">Save</button>
+                    <button class="flat-button fb-bottom  fb-note fb-alt-hover fb-small" data-text="Continue">Continue</button>
+                    <button class="flat-button fb-right  fb-note fb-alt-hover fb-small icon" data-text="j">j</button>
+                    <button class="flat-button fb-left  fb-note fb-alt-hover fb-small" data-text="☂">☂</button>
+                </div>
+            </div>
+                
+            <h2 id="limitations">Limitations</h2>
+            <p>There are a few things you should know about.</p> 
+                
+                <ol>
+                    <li>The button corners should not be rounded. A browser quirk will render white lines inside the border on hover when corners are rounded.</li>
+                    <li>You can use unicode characters and some icon fonts as the button content . Icon-fonts like Ionicon that make use of unicode's private use area may not work correctly.</li>
+                    <li>The hover content must be <b>exactly the same</b> as the original button content.</li>
+                    <li>Other CSS files in your project could potentially interfier with your button styles. If that's happening, check the troubleshooting section at the end of this help document.</li>
+                    <li>These buttons are intended to use with the Button element. Their use on other elements is not supported.</li>
+                </ol>
+            
+        
+           
+            <h2 id="setup">Setting Up</h2>
+                <p>Before you can start using your buttons you'll need to set up the CSS file and install the Google Font "Lato".</p>
+                <h4>TL;DR - Setup</h4>
+                <p>Already familiar with HTML and CSS? Here's a summary of the setup steps. If you need more help, more detailed instructions follow.</p>
+                <ol>
+                    <li>Place the buttons.css file in the appropriate directory of your site.</li>
+                    <li>Link to the buttons.css file in the Head of your site.</li>
+                    <li>Include the Google Font "Lato" with weights 300 and 400.</li>
+                    <li>Start using your buttons!</li>
+                </ol>
+                <h4>More Detailed Instructions</h4>
+                <p>First thing's first. Download and unzip your purchase from Envato. Once unziped, you'll have a main Buttons folder with a bunch of other files and folders inside it. Most of that is documentation. The only file you need to add to your website is the one titled "buttons.css".</p>
+                <p>Upload this file to the appropriate section of your website, or if you're working on a local version of the site (always a good idea) just copy the buttons.css file into the appropriate local folder.</p>
+                <p>Not sure where to put your buttons.css file? You can usually put your stylesheet anywhere you want, as long as you can write a path to the file (see below). Some frameworks and CMS's, however, have conventions about where you <i>should</i> put css files. For example, in Wordpress your theme might have a folder called CSS for your css files. That might look something like this:</p>
+                <figure>
+                    <img src="img/wordpresstree.jpg" alt="wordpress file tree">
+                    <figcaption><i>CSS files located inside CSS folder in a wordpress theme.</i></figcaption>
+                </figure>
+                    <p>If you're not sure where to put your css files, do an internet search for "where to put style sheets in _____" filling in the blank with the name of your framework or CMS.</p>  
+                <p>Once buttons.css is in the right place, all you have to do is link to the style sheet in the Head of your HTML document (between the "head" tags at the top of the HTML document) like so:</p>
+                <pre><code>&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/buttons.css&quot;&gt;
+&lt;/head&gt;</code></pre>
+                <p>The example above uses a <a href="http://www.coffeecup.com/help/articles/absolute-vs-relative-pathslinks/" alt="relative vs absolute paths in html" title="using relative paths in html">relative path</a> to reference the css file. You <em>can</em> write out the whole path, but it's more future-proof to use a relative path.</p>
+                <p>This relative link tells you where the css file is relative to the location of the HTML file. The relative path above means that buttons.css is in a folder called "css" that's in the same level as the HTML document. </p>
+                <p>For more help with setting up the correct relative path to your buttons.css file, please see this great article on CSS Tricks - <a href="http://css-tricks.com/quick-reminder-about-file-paths/" title="CSS Tricks Relative Paths"> Quick Reminder About File Paths</a></p>
+                
+                 <h2 id="using">Using the Buttons</h2>
+                <p>The buttons are intended to be used on the <em>button</em> element with the instructions in this section. You can technically use these button styles on other elements, but the results may not be as expected, and using these classes on anything other than the button element is not supported. </p>
+                <h3>TL;DR - Using Classes</h3>
+                
+                <p>To use a flat button, you always start by adding the <b>flat-button</b> class. Color classes and size classes can be added with or without hover effect classes. Add a directional hover class if you want to use hover effects.  You <strong>must</strong> add the data-text attribute to the html button if you're using hover effects. Your final button code might look something like this:</p>
+                <pre><code>&lt;button class=&quot;flat-button fb-top fb-warning fb-alt-hover&quot; data-text=&quot;Buy Now&quot;&gt;Buy Now&lt;/button&gt;</code></pre>
+                <p>Which would result in a button like this:</p>
+                <p><button class="flat-button fb-top fb-warning fb-alt-hover" data-text="Buy Now">Buy Now</button></p>
+                <h4>Class Cheat-Sheet</h4>
+                <p>Here's a quick cheat-sheet of the various button classes for those of you who don't need a lot of instruction. Remember, it's reccommended that you use these classes on a button element as they won't work as expected on other input elements.</p>
+                <ul>
+                    <li><pre><code>flat-button</code></pre> sets the base styles for the button and is needed for all the other classes. There are no hover effects for flat-button.</li>
+                    <li><pre><code>fb-top</code></pre>, <pre><code>fb-bottom</code></pre>, <pre><code>fb-left</code></pre>, and <pre><code>fb-right</code></pre> initialize a hover effect with a coorisponding hover origin, e.g. fb-top causes the hover state to slide in from the top.</li>
+                    <li><pre><code class="warning">fb-warning</code></pre>, <pre><code class="attention">fb-attention</code></pre>, <pre><code class="callout">fb-callout</code></pre>, <pre><code class="info">fb-info</code></pre>, <pre><code class="go">fb-go</code></pre>, and <pre><code class="note">fb-note</code></pre> change the colors of the buttons. The default color is <span class="primary">light teal</span> and needs no additional class to initialize.</li>
+                    <li><pre><code>fb-small</code></pre>, and <pre><code>fb-big</code></pre> change the size of the buttons. The default size is "medium", or more specifically 1.5em. </li>
+                    <li><pre><code>fb-alt-hover</code></pre> activates the alternative hover effect which is a solid color background with white text.</li>
+                    <li><pre><code>data-text</code></pre> attribute <b>must</b> be added to the button html with a value <em>exactly equal</em> to the content of the button if you're using hover effects. See the example below.</li>
+                </ul>
+                <h3>Further Instructions - Classes</h3>
+                
+                
+                <p>Got all that? Here are some more detailed instructions just in case.</p>
+            <h4 id="default">The Default Button</h4>
+                <p>The simplest way to start using flat buttons is to add the <b>flat-button</b> class to an HTML button like this:</p>
+            
+                <pre><code>&lt;button class=&quot;flat-button&quot;&gt;Buy Now&lt;/button&gt;</code></pre>
+            <p>Which would render the following button:</p>
+                <p><button class="flat-button">Buy Now</button></p>
+            
+                <p>The default flat button (above) is a medium sized button with transparant background, and light teal text and border. It will have no hover effects.</p> 
+                <p>You'll need to use the flat-button class every time you use a flat button, even when you add other fb classes. To include hover effects, you must use additional hover and modifier classes.</p>
+            
+            <h4 id="hover">Hover Effects</h4>
+            <p>Use the base class flat-button and an aditional hover class of either <b>fb-top</b>, <b>fb-bottom</b>, <b>fb-left</b>, or <b>fb-right</b> to control the hover effect of the button. You must also include the data attribute <b>data-text</b> with the value exactly equal to the content of the button in order for the hover effects to work properly. For example:</p>
+            <pre><code>&lt;button class=&quot;flat-button fb-top&quot; data-text=&quot;Buy Now&quot;&gt;Buy Now&lt;/button&gt;</code></pre>
+            <p>Which would render the following button:</p>
+            <p><button class="flat-button fb-top" data-text="Buy Now">Buy Now</button></p>
+            
+            
+            <h4 id="modifyers">Modifyers</h4>
+                <p>There are a few ways to modify your flat buttons. You can change their size, color, and use an alternative hover effect by simply adding extra classes to the button.</p>
+            
+            
+            <h5>Sizes</h5>
+            <p>There are three sizes available for the button. The default medium size is built into the base class. No extra class is needed to use the medium size buttons.There is also a <b>fb-small</b> class, and a <b>fb-big</b> class, which will make the button smaller, or larger respectively. </p>
+            
+            <pre><code>&lt;button class=&quot;flat-button fb-top fb-big&quot; data-text=&quot;Buy Now&quot;&gt;Buy Now&lt;/button&gt;</code></pre>
+            <p>Which would render the following button:</p>
+            <p><button class="flat-button fb-top fb-big" data-text="Buy Now">Buy Now</button></p>
+            
+            <p>The classes fb-small and fb-big must be used in conjunction with the flat-button class to work properly.</p>
+            
+            <h5>Colors</h5>
+            <p>There are seven colors available for the buttons. There's the default light teal, and six other colors that can be used by adding classes to the buttons. The class names are based on the kind of thing you might use that color for. This way, if you choose to change the colors inn the future, the class names will still make sense. The color classes are:</p>
+                <ul class="button-list clearfix">
+                   <li> <a class="flat-button fb-warning fb-alt-hover fb-top" data-text="fb-warning" href="#">fb-warning</a></li>
+                    <li><a class="flat-button fb-attention fb-alt-hover fb-top" data-text="fb-attention" href="#">fb-attention</a></li>
+                    <li><a class="flat-button fb-callout fb-alt-hover fb-top" data-text="fb-callout" href="#">fb-callout</a></li>
+                   <li> <a class="flat-button fb-go fb-alt-hover fb-top" data-text="fb-go" href="#">fb-go</a></li>
+                   <li> <a class="flat-button fb-info fb-alt-hover fb-top" data-text="fb-info" href="#">fb-info</a></li>
+                   <li> <a class="flat-button fb-note fb-alt-hover fb-top" data-text="fb-note" href="#">fb-note</a></li>
+                </ul>
+                <p>Add a color class to the button markup to use a color other than the default, like this:</p>
+            
+            <pre><code>&lt;button class=&quot;flat-button fb-top fb-alt-hover fb-warning&quot; data-text=&quot;Buy Now&quot;&gt;Buy Now&lt;/button&gt;</code></pre>
+            <p>Which would render the following button:</p>
+            <p><button class="flat-button fb-top fb-alt-hover fb-warning" data-text="Buy Now">Buy Now</button></p>
+            
+            <p>Remember, you must use the flat-button class with a color class to make the color classes work properly.</p> 
+            <h3 id="disabled">The Disabled State</h3>
+            <p>When buttons are disabled, they will automaticaly lose all hover effects, and become a soft gray color.</p>
+                <p>To disable a button, simply add "disabled" to the button like this:</p>
+                <pre><code>&lt;button class=&quot;flat-button fb-top fb-alt-hover fb-warning&quot; data-text=&quot;Buy Now&quot; disabled &gt;Buy Now&lt;/button&gt; </code></pre>
+                <p>which would create the following button:</p>
+                <button class="flat-button fb-top fb-alt-hover fb-warning" data-text"Buy Now" disabled>Buy Now</button>
+            
+            <h2 id="altering">Altering the Buttons with SASS &amp; CSS</h2>
+            <h3 id="sassbasics">Modifying the CSS using SASS</h3>
+                <p>These buttons were initially created using SASS (Syntactically Awesome Style Sheets) which is a css preprocessor that makes CSS simpler to write and maintane. While you should only need to include the actal CSS file (buttons.css) the original SASS file (buttons.css.scss) is also included with this package to make updating and editing your buttons easier. The size and colors of the buttons are easily changed in the SASS file. If you're new to SASS, I recommend downloading and installing SCOUT which will help you preprocess your SASS file and generate an updated CSS file that you can use on your website once you've completed any updates or revisions.  </p>
+            <h3 id="colorpalettes">Finding &amp; Creating Color Pallettes</h3>
+            <h3 id="fonts">Using Google Fonts</h3>
+                <p><pre><code>&lt;link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'&gt;</code></pre></p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--End of Content-->
+        <script>$(document).ready(function() {
+            $('#nav').onePageNav();
+            });
+        </script>
+    </body>
+ </html>

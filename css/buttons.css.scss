@@ -1,0 +1,352 @@
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/*
+ * !CONTENTS............Sections contained in this style sheet 
+ * !VARIABLES...........Sass color variables
+ * !FONT................Install this line to use the Google Font
+ * !RESET...............Removes browser's default styling
+ * !BUTTON-BASE.........Base styles for the buttons
+ * !BUTTON-BASE-HOVER...Hover styles for the buttons
+ * !MODIFIERS...........Classes that modify the base button styles
+ * !DISABLED............Stlyes for disabled buttons in the base class
+ * 
+ * The ! before section titles makes this file easily searchable. Simply copy 
+ * the section title (ex: !RESET) and paste into your text editor's search 
+ * function to jump to that section of the file. 
+ */
+    
+
+
+/*------------------------------------*\
+   !VARIABLES
+\*------------------------------------*/
+/*
+ * The button colors can be easily changed in the SCSS file. Please see 
+ * the readme file included in this package for more information on how to use 
+ * SASS to change these colors.
+ *
+ * You can also easily change the width of your button's outline here. All of 
+ * the button styles will update coorisponding to the new width, and the "big"
+ * versions of the buttons will have twice the outline width.
+ *
+ * Don't see any styles in this section? You're probably in the buttons.css file.
+ * To work with variables, you must make changes in the buttons.css.scss file. 
+ */
+
+$primary-color: #1abc9c;
+$go-color: #2ecc71;
+$info-color: #3498db;
+$note-color: #34495e;
+$callout-color: #f1c40f;
+$attention-color: #e67e22;
+$warning-color: #e74c3c;
+$disabled-color:#818181;
+$default-background:rgba(255,255,255,0);
+$hover-text:#777;
+$outline-width:1px;
+
+
+
+
+
+
+/*-----------------------------------*\
+    !MIXINS
+\*-----------------------------------*/
+/*
+ * The following mixins make writing vendor prefixes in other parts of this
+ * file a simpler process. You shouldn't have to change any of these directly.
+ * If you need more information on utilizing them, please take a look at the 
+ * readme file that came with your purchase.
+ */
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition-property($tproperty){
+    -webkit-trantition-property: $tproperty;
+       -moz-transition-property: $tproperty;
+         -o-transition-property: $tproperty;
+            transition-property: $tproperty;
+}
+
+@mixin transition-duration($tduration){
+    -webkit-trantition-duration: $tduration;
+       -moz-transition-duration: $tduration;
+         -o-transition-duration: $tduration;
+            transition-duration: $tduration;
+}
+
+
+@mixin transition-timing($ttiming){
+    -webkit-trantition-timing-function: $ttiming;
+       -moz-transition-timing-function: $ttiming;
+         -o-transition-timing-function: $ttiming;
+            transition-timing-function: $ttiming;
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    !FONT
+\*------------------------------------*/
+/*
+ * Copy and paste the following line into the head of your HTML file to include
+ * the Google Font "Lato".
+        
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+
+ * Further instructions for installing, changing, and utilizing Google Fonts is 
+ * included in the readme file that came with your purchase.
+ */
+
+
+        
+   
+
+
+/*------------------------------------*\
+    !RESET
+\*------------------------------------*/
+/*
+ * This section removes existing or default button styles and ensures that 
+ * the buttons look the same across different browsers. You may need to add to 
+ * them if your theme or template already has button styles that break the flat
+ * buttons.
+ */
+
+button.flat-button,
+a.flat-button{
+    box-sizing:border-box;
+    background:none;
+    font-style:normal;
+    text-decoration:none;
+    line-height:1.5;
+    @include border-radius(0);
+    text-shadow: none;
+    text-decoration: none;
+    overflow:hidden;
+    display:inline-block;
+    align-items:baseline;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+button::-moz-focus-inner{
+    padding: 0;
+    border: 0;
+}
+        
+
+
+        
+
+
+/*------------------------------------*\
+    !BUTTON-BASE
+\*------------------------------------*/
+/*
+ * These are the base styles for the flat button. If you want to add additional 
+ * styles that will apply to all of your buttons, add them here. 
+ */
+
+.flat-button{
+    font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight:300;
+    font-size:1.5em;
+    word-spacing:-.025em;
+    margin:.5em;
+    padding:.4em;
+    background:$default-background;
+    cursor: pointer;
+    color:$primary-color;
+    border:$outline-width solid;
+    position:relative;
+    overflow:hidden; 
+}
+    
+.flat-button:hover{
+    color:$primary-color;
+}  
+        
+ 
+
+
+
+/*------------------------------------*\
+    !BUTTON-BASE-HOVER
+\*------------------------------------*/
+/*
+ * These are the rules that control the directional hover states of your 
+ * buttons. 
+ *
+ * For more information on implementing your buttons, take a look at the readme
+ * file that was included with your purchase.
+ */
+
+.flat-button:before{
+    content:attr(data-text);
+    padding:inherit;
+    color:#fff;
+    border:none;
+    position:absolute;
+    background-color:$primary-color;
+    visibility:hidden;
+    @include transition-duration(.35s);
+    @include transition-timing(ease);
+}
+
+.fb-bottom:before, .fb-top:before, .fb-left:before, .fb-right:before{
+    visibility:visible;
+}
+        
+.flat-button.fb-bottom:before{
+    bottom:-100%;
+    left:0;
+    @include transition-property(bottom); 
+}
+
+.flat-button.fb-bottom:hover:before{
+    bottom:0px;
+}
+
+ .flat-button.fb-top:before{
+    top:-100%;
+    left:0;
+    @include transition-property(top);
+}
+
+.flat-button.fb-top:hover:before{
+    top:0px;
+}
+
+ .flat-button.fb-left:before{
+    left:-100%;
+    top:0;
+    @include transition-property(left);
+}
+
+.flat-button.fb-left:hover:before{
+    left:0px;
+}
+
+.flat-button.fb-right:before{
+    right:-100%;
+    top:0;
+    @include transition-property(right);
+}
+
+.flat-button.fb-right:hover:before{
+    right:0px;
+}
+        
+
+        
+        
+        
+        
+        
+        
+        
+/*------------------------------------*\
+    !MODIFIERS
+\*------------------------------------*/
+        
+/* ---------  SIZES --------- */
+
+.flat-button.fb-big{
+    font-size:1.75em;
+    border:$outline-width*2 solid;
+}
+
+.flat-button.fb-small{
+    font-size:1em;
+}
+        
+/* ----- COLORS --------- */
+/*
+ * If you want to change these colors, the easiest way to do so is to change 
+ * the color variables at the top of the SCSS file. For more instructions on 
+ * doing that, please see the readme file included with your purchase. 
+ */
+
+
+.flat-button.fb-go{
+    color:$go-color;   
+}
+
+.flat-button.fb-go:before{
+    background-color:$go-color;
+}    
+
+.flat-button.fb-info{
+    color:$info-color;
+}
+
+.flat-button.fb-info:before{
+    background-color:$info-color;    
+}  
+
+.flat-button.fb-note{
+    color:$note-color;
+}
+
+.flat-button.fb-note:before{
+    background-color:$note-color;   
+}  
+
+.flat-button.fb-callout{
+    color:$callout-color;
+}
+
+.flat-button.fb-callout:before{
+    background-color:$callout-color;
+}    
+
+.flat-button.fb-attention{
+    color:$attention-color;
+}
+
+.flat-button.fb-attention:before{
+    background-color:$attention-color;
+}    
+
+.flat-button.fb-warning{
+    color:$warning-color;
+}
+
+.flat-button.fb-warning:before{
+    background-color:$warning-color;
+    border-color:$warning-color;
+}
+
+
+
+
+
+       
+/*------------------------------------*\
+    !DISABLED
+\*------------------------------------*/
+button.flat-button.disabled:hover, 
+button.flat-button.disabled:focus, 
+button.flat-button[disabled]:hover, 
+button.flat-button[disabled]:focus, 
+button.flat-button:disabled{
+    color:$disabled-color;
+    box-shadow: none;
+    cursor:default;
+    background:none;
+    border:$outline-width solid $disabled-color;
+}
+
+.flat-button:disabled:before{
+    display:none;
+}
